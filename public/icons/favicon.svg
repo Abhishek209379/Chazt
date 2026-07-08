@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE066;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8922C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Bubble body -->
+  <rect x="2" y="2" width="44" height="34" rx="12" ry="12" fill="url(#goldGrad)"/>
+
+  <!-- Tail -->
+  <polygon points="8,36 22,36 10,48" fill="url(#goldGrad)"/>
+
+  <!-- Three dots -->
+  <circle cx="14" cy="19" r="3.5" fill="#0C0A0F" opacity="0.75"/>
+  <circle cx="24" cy="19" r="3.5" fill="#0C0A0F" opacity="0.75"/>
+  <circle cx="34" cy="19" r="3.5" fill="#0C0A0F" opacity="0.75"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 50" width="140" height="50">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE066"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#B8922C"/>
+    </linearGradient>
+    <linearGradient id="d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+
+  <!-- "Chazt" + dot as one text element so spacing is zero -->
+  <text
+    x="4"
+    y="38"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="36"
+    font-weight="400"
+    fill="url(#g)"
+    letter-spacing="1"
+  >Chazt<tspan fill="url(#d)" dy="0" dx="-1">.</tspan></text>
+</svg>
