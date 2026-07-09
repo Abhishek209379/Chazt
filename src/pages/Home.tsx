@@ -34,17 +34,17 @@ function Home() {
 
   return (
     <>
-      <Box sx={{ bgcolor: theme.customColors.surface, height: 'calc(100vh - 76px)', overflow: 'hidden', display: 'flex', alignItems: 'center'  }}>
+      <Box sx={{ bgcolor: theme.customColors.surface, height: { xs: '100%', sm: 'calc(100vh - 76px)' }, overflow: { md: 'hidden' }, display: 'flex', alignItems: 'center', px: { xs: 2, sm: 4, md: 6 } }}>
         <Grid container spacing={2} sx={{ width: '100%' }}>
-          <Grid size={8}>
-            <Box sx={{ px: 6 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 8 }}>
+            <Box>
               <Box sx={{ mb: 3.5, gap: 1.25, display: 'flex', alignItems: 'center' }}>
                 <Box sx={{ minWidth: '28px', height: '1px', backgroundColor: 'text.goldtext' }}></Box>
                 <Typography sx={{ color:'text.goldtext', fontSize: '12px', fontweight: 500, textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: '"Inter", sans-serif' }}>You are never alone</Typography>           
               </Box>
             
-              <Box sx={{ mb: 2.5, maxWidth: '500px' }}>
-                <Typography sx={{ color: 'text.cream', fontSize: '52px', lineHeight: 1.1, letterSpacing: '-0.01em'  }}>
+              <Box sx={{ mb: 2.5, maxWidth: { sm: '250px', md: '500px' } }}>
+                <Typography sx={{ color: 'text.cream', fontSize: { sm: '32px', md: '52px' }, lineHeight: 1.1, letterSpacing: '-0.01em'  }}>
                   Someone is always there to{' '}
                   <Box component="em" sx={{ color: 'text.gold', fontStyle: 'italic' }}>
                     listen.
@@ -79,7 +79,7 @@ function Home() {
             </Box>
           </Grid>
 
-          <Grid size={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} sx={{ display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
             <Box sx={{
               width: '220px',
               background: '#161320',
