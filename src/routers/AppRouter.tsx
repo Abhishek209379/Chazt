@@ -1,6 +1,6 @@
-import { createBrowserRouter } from 'react-router-dom';
-import HomeLayout from '../layouts/HomeLayout';
-import Home from '../pages/Home';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomeLayout from "../layouts/HomeLayout";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -15,4 +15,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+export default function AppRouter() {
+  return <RouterProvider router={router} />;
+}

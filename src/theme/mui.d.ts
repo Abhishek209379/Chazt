@@ -1,11 +1,6 @@
 import '@mui/material/styles';
 
 declare module '@mui/material/styles' {
-  interface TypeText {
-    cream: string;
-    gold: string;
-  }
-
   interface Theme {
     customColors: {
       surface: string;
@@ -21,4 +16,20 @@ declare module '@mui/material/styles' {
       border?: string;
     };
   }
+
+  interface TypeText {
+    cream: string;
+    gold: string;
+    goldtext: string;
+    grey: string;
+  }
+
+  interface TypeTextOptions {
+    cream?: string;
+    gold?: string;
+    goldtext?: string;
+    grey?: string;
+  }
 }
+
+export {};

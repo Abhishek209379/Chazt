@@ -10,7 +10,7 @@ const Header = () => {
                 bgcolor: theme.customColors.surface,
                 height: '76px',
                 display: 'flex',
-                alignIteams: 'center',
+                alignItems: 'center',
                 borderBottom: '1px solid rgba(255,255,255,0.04)'
             })}
         >

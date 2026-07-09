@@ -11,20 +11,19 @@ export default function PrimaryButton({text, callback = () => {}}: PrimaryButton
     <Box>
       <Button
         variant="contained"
-        size="medium"
+        onClick={callback}
         sx={{
           background: "primary.main",
           borderRadius: "100px",
           py: 1,
           px: 4,
           textTransform: "capitalize",
-          fs: 1.5,
-          fw: 500,
+          fontSize: "1rem",
+          fontWeight: 500,
           color: "#0C0A0F",
-          transition: "opacity 0.2s,transform 0.2s",
-          letterSpacing: "0.06em"
+          transition: "opacity 0.2s, transform 0.2s",
+          letterSpacing: "0.06em",
         }}
-        // onClick={callback}
       >
         {text}
       </Button>

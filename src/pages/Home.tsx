@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import IconButton from "@mui/material/IconButton";
 import TextField from '@mui/material/TextField';
 import { Form, Formik } from 'formik';
+import type { FormikErrors } from 'formik';
 import PrimaryButton from "../components/primaryButton";
 
 function Home() {
@@ -153,7 +154,7 @@ function Home() {
                   <Formik
                     initialValues={{ email: '', password: '' }}
                     validate={values => {
-                      const errors = {};
+                      const errors: FormikErrors<typeof values> = {};
                       if (!values.email) {
                         errors.email = 'Required';
                       } else if (
@@ -171,7 +172,19 @@ function Home() {
                     }}
                   >
                     {({ isSubmitting }) => (
-                      <Form sx={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '14px', borderBottomLeftRadius: '4px', alignSelf: 'flex-start', maxWidth: '80%', p: '9px 13px' }}>
+                      <Box
+                      component={Form}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        background: 'rgba(255,255,255,0.05)',
+                        borderRadius: '14px',
+                        borderBottomLeftRadius: '4px',
+                        maxWidth: '80%',
+                        p: '9px 13px',
+                      }}
+                    >
                         <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center', justifyContent: 'center' }}>
                           <TextField
                             name="chatInput"
@@ -209,7 +222,7 @@ function Home() {
                             </IconButton>
                           )}
                         </Box>
-                      </Form>
+                      </Box>
                     )}
                   </Formik>
                 </Box>
