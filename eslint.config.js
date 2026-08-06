@@ -1,35 +1,22 @@
-// eslint.config.js
-import { FlatCompat } from "eslint-define-config";
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
-const compat = new FlatCompat({ baseDirectory: process.cwd() });
-
-export default [
-  ...compat.extends(
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
-  ),
+export default defineConfig([
+  globalIgnores(['dist']),
   {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
     languageOptions: {
-      parser: "@typescript-eslint/parser",
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        ecmaFeatures: {
-          jsx: true,
-        },
-        project: "./tsconfig.json", // if you want type-aware linting
-      },
-    },
-    plugins: {
-      react: "eslint-plugin-react",
-      "@typescript-eslint": "@typescript-eslint/eslint-plugin",
-      prettier: "eslint-plugin-prettier",
-    },
-    rules: {
-      "prettier/prettier": "error",
-      "react/react-in-jsx-scope": "off", // React 17+ JSX runtime
+      globals: globals.browser,
     },
   },
-];
+])
