@@ -1,8 +1,8 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import Grid from '@mui/material/Grid';
 import { keyframes } from '@mui/material/styles';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
-import Grid from '@mui/material/Grid';
 
 const bounce = keyframes`
   0%, 80%, 100% {
