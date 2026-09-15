@@ -1,7 +1,19 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
+import { keyframes } from '@mui/material/styles';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
 import Grid from '@mui/material/Grid';
+
+const bounce = keyframes`
+  0%, 80%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+`;
 
 const Home = (() => {
     const clickCallback = (() => {
@@ -32,8 +44,8 @@ const Home = (() => {
     ]
 
     return (
-        <Box sx={{ backgroundColor: "background.default", height: "calc('100vh-97px')", p: 7 }}>
-            <Grid container spacing={2}>
+        <Box sx={{ backgroundColor: "background.default", height: "calc('100vh-97px')", p: { xs: 8, sm: 10, md: 14 } }}>
+            <Grid container spacing={{ xs: 3, md: 4 }}>
                 <Grid size={{ xs: 12, sm: 6, md: 8 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 3.5 }}>
                         <Box sx={{ width: '28px', backgroundColor: 'border.main', height: '0.6px' }}></Box>
@@ -99,12 +111,12 @@ const Home = (() => {
                         </Box>
 
                         <Box sx={{ maxWidth: '170px' }}>
-                            <Typography variant="body2" sx={{ color: 'rgba(245,240,232,0.35)', lineHeight: 1.5 }}><Box component="span" sx={{ color: 'rgba(245,240,232,0.65)'}}>48,000+ people</Box>  have shared their feelings anonymously</Typography>
+                            <Typography variant="body2" sx={{ color: 'rgba(245,240,232,0.35)', lineHeight: 1.5 }}><Box component="span" sx={{ color: 'rgba(245,240,232,0.65)' }}>48,000+ people</Box>  have shared their feelings anonymously</Typography>
                         </Box>
                     </Box>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-                    <Box sx={{ border: '1px solid rgba(255,255,255,0.07)', background: '#161320', width: '220px', borderRadius: '32px', boxShadow: '0 40px 80px rgba(0,0,0,0.5)', overflow: 'hidden' }}>
+                <Grid size={{ xs: 12, sm: 6, md: 4 }} sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'end', alignItems: 'center', width: { xs: '100%', sm: 'auto' } }}>
+                    <Box sx={{ border: '1px solid rgba(255,255,255,0.07)', background: '#161320', width: '220px', borderRadius: '32px', boxShadow: '0 40px 80px rgba(0,0,0,0.5)', overflow: 'hidden', maxHeight: 'fit-content' }}>
                         <Box sx={{ display: 'flex', px: 2, py: 1.5, backgroundColor: 'background.cardGrey', gap: 1.25, flex: 1, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                             <Box sx={{ width: '32px', height: '32px', backgroundColor: 'rgba(212,175,55,0.12)', borderRadius: '50%', border: '1px solid rgba(212,175,55,0.2)', alignItems: 'center', justifyContent: 'center', fontSize: '14px', display: 'flex' }}>
                                 <Typography sx={{ fontSize: '14px', color: 'primary.main' }}>A</Typography>
@@ -117,7 +129,7 @@ const Home = (() => {
                                 <Typography variant='body2' sx={{ color: 'text.gold1', fontSize: '10px' }}>anon</Typography>
                             </Box>
                         </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', px: 2, py: 1.5, gap: 1.25 }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', p: 2, gap: 1.25 }}>
                             <Box sx={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderRadius: '14px', borderBottomLeftRadius: '4px', alignSelf: 'flex-start', py: 1, px: 1.5, fs: 1.5, lineHeight: 1.55, maxWidth: '155px' }}>
                                 <Typography sx={{ color: 'text.creamYellow', fontSize: '12px' }}>I've been feeling really lonely lately… don't know who to talk to 😔</Typography>
                             </Box>
@@ -127,11 +139,43 @@ const Home = (() => {
                             <Box sx={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderRadius: '14px', borderBottomLeftRadius: '4px', alignSelf: 'flex-start', py: 1, px: 1.5, fs: 1.5, lineHeight: 1.55, maxWidth: '155px' }}>
                                 <Typography sx={{ color: 'text.creamYellow', fontSize: '12px' }}>Really? That means so much 🥺</Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', gap: 0.5, backgroundColor: 'rgba(255, 255, 255, 0.05)', borderRadius: '14px', borderBottomLeftRadius: '4px', alignSelf: 'flex-start', py: 1, px: 1.5, fs: 1.5, lineHeight: 1.55, maxWidth: '155px' }}>
-                                <Box sx={{ width: '4px', height: '4px', backgroundColor: 'rgba(245,240,232,0.25)', borderRadius: '50%', animation: 'bounce 1.4s infinite ease-in-out', animationDelay: `${0 * 0.2}s` }}></Box>
-                                <Box sx={{ width: '4px', height: '4px', backgroundColor: 'rgba(245,240,232,0.25)', borderRadius: '50%', animation: 'bounce 1.4s infinite ease-in-out', animationDelay: `${1 * 0.2}s` }}></Box>
-                                <Box sx={{ width: '4px', height: '4px', backgroundColor: 'rgba(245,240,232,0.25)', borderRadius: '50%', animation: 'bounce 1.4s infinite ease-in-out', animationDelay: `${2 * 0.2}s` }}></Box>
+                            <Box sx={{ display: 'flex', gap: 0.5, backgroundColor: 'rgba(255, 255, 255, 0.05)', borderRadius: '14px', borderBottomLeftRadius: '4px', alignSelf: 'flex-start', py: 1, px: 1.5, fs: 1.5, lineHeight: 1.55, maxWidth: '155px', alignItems: 'center' }}>
+                                <Box
+                                    sx={{
+                                        width: '4px',
+                                        height: '4px',
+                                        borderRadius: '50%',
+                                        backgroundColor: 'rgba(245,240,232,0.25)',
+                                        animation: `${bounce} 1.4s infinite ease-in-out`,
+                                    }}
+                                />
+                                <Box
+                                    sx={{
+                                        width: '4px',
+                                        height: '4px',
+                                        borderRadius: '50%',
+                                        backgroundColor: 'rgba(245,240,232,0.25)',
+                                        animation: `${bounce} 1.4s infinite ease-in-out`,
+                                        animationDelay: '0.2s',
+                                    }}
+                                />
+                                <Box
+                                    sx={{
+                                        width: '4px',
+                                        height: '4px',
+                                        borderRadius: '50%',
+                                        backgroundColor: 'rgba(245,240,232,0.25)',
+                                        animation: `${bounce} 1.4s infinite ease-in-out`,
+                                        animationDelay: '0.4s',
+                                    }}
+                                />
                             </Box>
+                        </Box>
+                        <Box sx={{ display: 'flex', px: 2, py: 1.5, backgroundColor: 'background.cardGrey', gap: 1.25, flex: 1, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                            <Box sx={{ background: '#ffffff0d', p: '7px 12px', minWidth: '150px', borderRadius: '100px' }}>
+                                <Typography variant='subtitle1' sx={{ color: 'text.cream1', lineHeight: 1.5 }}>Say Something kind...</Typography>
+                            </Box>
+                            <Box sx={{ background: '#D4AF37', width: '28px', height: '28px', borderRadius: '50%'}}></Box>
                         </Box>
                     </Box>
                 </Grid>
