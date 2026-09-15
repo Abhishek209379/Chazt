@@ -13,7 +13,8 @@ const palette = {
         cardGrey: '#111018',
         golden: '#C9A227',
         white: "#FFFFFF",
-        goldenBlack: '#d4af3724'
+        goldenBlack: '#d4af3724',
+        white100: '#ffffff0d'
     },
 
     border: {
@@ -28,7 +29,8 @@ const palette = {
         grey: '#f5f0e8',
         dark: '#0C0A0F',
         gold1: '#C9A227',
-        creamYellow: '#f5f0e8b3'
+        creamYellow: '#f5f0e8b3',
+        cream1: '#f5f0e840'
     },
 };
 

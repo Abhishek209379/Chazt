@@ -18,6 +18,10 @@ const typography = {
         fontSize: "12px"
     },
 
+    subtitle1: {
+        fontSize: "10px"
+    },
+
     button: {
         textTransform: "none",
     },
