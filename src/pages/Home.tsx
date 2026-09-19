@@ -44,8 +44,8 @@ const Home = (() => {
     ]
 
     return (
-        <Box sx={{ backgroundColor: "background.default", height: "calc('100vh-97px')", p: { xs: 8, sm: 10, md: 14 } }}>
-            <Grid container spacing={{ xs: 3, md: 4 }}>
+        <Box sx={{ backgroundColor: "background.default", minHeight: "calc(100vh - 86px)", display: 'flex', alignItems: 'center', px: { xs: 8, sm: 10, md: 14 } }}>
+            <Grid container spacing={{ xs: 3, md: 4 }} sx={{ alignItems: 'center', width: '100%' }}>
                 <Grid size={{ xs: 12, sm: 6, md: 8 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 3.5 }}>
                         <Box sx={{ width: '28px', backgroundColor: 'border.main', height: '0.6px' }}></Box>
