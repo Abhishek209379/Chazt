@@ -17,7 +17,7 @@ export default function Navbar() {
           color: 'text.primary',
           borderBottom: '1px solid rgba(255, 255, 255, 0.04)'
         }}>
-        <Toolbar disableGutters sx={{ py: 3, px: 6, display: 'flex', justifyContent: 'space-between' }}>
+        <Toolbar disableGutters sx={{ py: 3, display: 'flex', justifyContent: 'space-between', px: { xs: 8, sm: 10, md: 14 }  }}>
           <Box
             component="img"
             src={Logo}
