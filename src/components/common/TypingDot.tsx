@@ -12,7 +12,7 @@ export const TypingDot = ({ key, delay }: { key: number, delay: number}) => (
                 width: "4px",
                 height: "4px",
                 borderRadius: "50%",
-                backgroundColor: "rgba(245,240,232,0.25)",
+                backgroundColor: "text.disabled",
                 animation: `${bounce} 1.4s infinite ease-in-out`,
                 animationDelay: `${delay}s`,
             }}
