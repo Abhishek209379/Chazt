@@ -7,7 +7,6 @@ const theme = createTheme({
   palette,
   typography,
   breakpoints,
-
   components: {
     MuiButton: {
       styleOverrides: {
